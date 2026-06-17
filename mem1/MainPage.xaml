@@ -4,36 +4,40 @@
              x:Class="mem1.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="mellstroy.jpg"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a submarine number ten" />
+        <VerticalStackLayout Padding="30" Spacing="25">
+            <Image x:Name="MemImage"
+                   Source="memea.gif"
+                   HeightRequest="250"
+                   Aspect="AspectFit" />
 
-            <Label
-                Text="Генерация мемов"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-            <Label
-                Text="Генерируйте картинки для общения с друзьями."
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"/>
-            <Label
-                Text="Нажмите на кнопку ниже для получения картинки ↓ "
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"/>
+            <Label Text="Генерация мемов" 
+                   HorizontalOptions="Center" 
+                   FontSize="24"
+                   FontAttributes="Bold" />
+
             <Label x:Name="CountLabel" 
-       Text="Сгенерировано мемов: 0" 
-       HorizontalOptions="Center" 
-       FontSize="18" />
-            <Button
-    x:Name="CounterBtn"
-    Text="Генерировать" 
-    WidthRequest="200"
-    Clicked="OnCounterClicked" />
+                   Text="Сгенерировано мемов: 0" 
+                   HorizontalOptions="Center" 
+                   FontSize="18" />
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button x:Name="CounterBtn" 
+            Text="Генерировать" 
+            WidthRequest="120" 
+            Clicked="OnCounterClicked" />
+
+                <Button x:Name="FavoriteBtn" 
+            Text="♡" 
+            WidthRequest="50" 
+            Clicked="OnFavoriteClicked" 
+            BackgroundColor="Transparent" 
+            TextColor="Gray" />
+
+                <Button Text="↓ Скачать" 
+            WidthRequest="100" 
+            Clicked="OnDownloadClicked" 
+            BackgroundColor="LightBlue" 
+            TextColor="Black" />
+            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
