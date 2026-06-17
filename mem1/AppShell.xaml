@@ -7,7 +7,7 @@
     Title="mem1">
 
     <ShellContent
-        Title="Home"
+        Title="Главная"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 
