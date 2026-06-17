@@ -36,5 +36,4 @@
     Clicked="OnCounterClicked" />
         </VerticalStackLayout>
     </ScrollView>
-    
 </ContentPage>

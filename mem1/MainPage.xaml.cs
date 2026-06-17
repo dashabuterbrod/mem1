@@ -12,8 +12,6 @@ public partial class MainPage : ContentPage
     private void OnCounterClicked(object sender, EventArgs e)
     {
         count++;
-
-        // Обновляем только счетчик, текст кнопки не трогаем
         CountLabel.Text = $"Сгенерировано мемов: {count}";
     }
 }
