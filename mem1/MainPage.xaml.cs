@@ -1,4 +1,6 @@
-﻿public partial class MainPage : ContentPage
+﻿namespace mem1;
+
+public partial class MainPage : ContentPage
 {
     int count = 0;
 
@@ -11,8 +13,7 @@
     {
         count++;
 
-        // Обновляем текст лейбла
+        // Обновляем только счетчик, текст кнопки не трогаем
         CountLabel.Text = $"Сгенерировано мемов: {count}";
-        SemanticScreenReader.Announce(CountLabel.Text);
     }
 }

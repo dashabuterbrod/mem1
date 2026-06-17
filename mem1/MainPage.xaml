@@ -8,7 +8,7 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="trollface.jpg"
+                Source="mellstroy.jpg"
                 HeightRequest="185"
                 Aspect="AspectFit"
                 SemanticProperties.Description="dot net bot in a submarine number ten" />
@@ -29,10 +29,11 @@
        Text="Сгенерировано мемов: 0" 
        HorizontalOptions="Center" 
        FontSize="18" />
-            <Button x:Name="CounterBtn"
-                    Text="Генерировать" 
-            WidthRequest="200"
-                Clicked="OnCounterClicked" />
+            <Button
+    x:Name="CounterBtn"
+    Text="Генерировать" 
+    WidthRequest="200"
+    Clicked="OnCounterClicked" />
         </VerticalStackLayout>
     </ScrollView>
     
