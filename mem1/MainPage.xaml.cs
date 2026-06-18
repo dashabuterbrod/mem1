@@ -34,6 +34,11 @@ public partial class MainPage : ContentPage
         int randomIndex = random.Next(memeList.Count);
         currentMeme = memeList[randomIndex];
         MemImage.Source = currentMeme;
+
+        if (!MemeStorage.SavedMemes.Contains(currentMeme))
+        {
+            MemeStorage.SavedMemes.Add(currentMeme);
+        }
     }
 
     private void OnFavoriteClicked(object sender, EventArgs e)

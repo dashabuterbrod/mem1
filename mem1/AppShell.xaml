@@ -6,9 +6,18 @@
     xmlns:local="clr-namespace:mem1"
     Title="mem1">
 
-    <ShellContent
-        Title="Главная"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <TabBar>
+        <Tab Title="Главная">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:MainPage}"
+                Route="MainPage" />
+        </Tab>
+
+        <Tab Title="Коллекция">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:SavedMemesPage}"
+                Route="SavedMemesPage" />
+        </Tab>
+    </TabBar>
 
 </Shell>
