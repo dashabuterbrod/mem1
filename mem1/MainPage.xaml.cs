@@ -35,6 +35,13 @@ public partial class MainPage : ContentPage
         currentMeme = memeList[randomIndex];
         MemImage.Source = currentMeme;
 
+<<<<<<< HEAD
+=======
+        if (!MemeStorage.SavedMemes.Contains(currentMeme))
+        {
+            MemeStorage.SavedMemes.Add(currentMeme);
+        }
+>>>>>>> d5b2062ea394e8ad12c2c47b54dca36a030fefae
     }
 
     private void OnFavoriteClicked(object sender, EventArgs e)

@@ -13,7 +13,11 @@
                 Route="MainPage" />
         </Tab>
 
+<<<<<<< HEAD
         <Tab Title="Коллекция">
+=======
+        <Tab Title="Сгенерированные">
+>>>>>>> d5b2062ea394e8ad12c2c47b54dca36a030fefae
             <ShellContent
                 ContentTemplate="{DataTemplate local:SavedMemesPage}"
                 Route="SavedMemesPage" />

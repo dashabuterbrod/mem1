@@ -14,11 +14,19 @@
             <CollectionView x:Name="MemesCollectionView" ItemsLayout="VerticalGrid, 2">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
+<<<<<<< HEAD
                         <Border Margin="5" Padding="5" Stroke="LightGray" StrokeThickness="8">
                             <Image Source="{Binding}" 
                                    HeightRequest="150" 
                                    Aspect="AspectFit" />
                         </Border>
+=======
+                        <Frame Margin="5" Padding="5" BorderColor="LightGray" CornerRadius="8">
+                            <Image Source="{Binding}" 
+                                   HeightRequest="150" 
+                                   Aspect="AspectFit" />
+                        </Frame>
+>>>>>>> d5b2062ea394e8ad12c2c47b54dca36a030fefae
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

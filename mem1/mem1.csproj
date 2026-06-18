@@ -66,9 +66,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
+<<<<<<< HEAD
 	  <MauiXaml Update="SavedMemesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+=======
+	  <None Update="SavedMemesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </None>
+>>>>>>> d5b2062ea394e8ad12c2c47b54dca36a030fefae
 	</ItemGroup>
 
 </Project>
