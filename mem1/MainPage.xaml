@@ -24,19 +24,6 @@
             Text="Генерировать" 
             WidthRequest="120" 
             Clicked="OnCounterClicked" />
-
-                <Button x:Name="FavoriteBtn" 
-            Text="♡" 
-            WidthRequest="50" 
-            Clicked="OnFavoriteClicked" 
-            BackgroundColor="Transparent" 
-            TextColor="Gray" />
-
-                <Button Text="↓ Скачать" 
-            WidthRequest="100" 
-            Clicked="OnDownloadClicked" 
-            BackgroundColor="LightBlue" 
-            TextColor="Black" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
