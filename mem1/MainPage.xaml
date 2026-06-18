@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="mem1.MainPage">
-
+             x:Class="mem1.MainPage"
+             BackgroundColor="LightGreen">
     <ScrollView>
         <VerticalStackLayout Padding="30" Spacing="25">
             <Image x:Name="MemImage"
                    Source="memea.gif"
                    HeightRequest="250"
+                   WidthRequest="250"
                    Aspect="AspectFit" />
 
             <Label Text="Генерация мемов" 
@@ -19,11 +20,19 @@
                    Text="Сгенерировано мемов: 0" 
                    HorizontalOptions="Center" 
                    FontSize="18" />
+
             <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Button x:Name="CounterBtn" 
-            Text="Генерировать" 
-            WidthRequest="120" 
+                <Button Text="Генерировать" 
+            WidthRequest="130" 
             Clicked="OnCounterClicked" />
+
+                <Button Text="♡" 
+            WidthRequest="50" 
+            Clicked="OnFavoriteClicked" />
+
+                <Button Text="Коллекция" 
+            WidthRequest="130" 
+            Clicked="OnViewFavoritesClicked" />
             </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

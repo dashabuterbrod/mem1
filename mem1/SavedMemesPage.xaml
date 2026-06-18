@@ -14,14 +14,15 @@
             <CollectionView x:Name="MemesCollectionView" ItemsLayout="VerticalGrid, 2">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Frame Margin="5" Padding="5" BorderColor="LightGray" CornerRadius="8">
+                        <Border Margin="5" Padding="5" Stroke="LightGray" StrokeThickness="8">
                             <Image Source="{Binding}" 
                                    HeightRequest="150" 
-                                   Aspect="AspectFit" />
-                        </Frame>
+                                   Aspect="AspectFit"/>
+                        </Border>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

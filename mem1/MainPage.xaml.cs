@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿
+using System.IO;
 
 namespace mem1;
 
@@ -7,7 +8,6 @@ public partial class MainPage : ContentPage
     int count = 0;
     Random random = new Random();
 
-    // Переменная для хранения текущей картинки
     string currentMeme = "memea.gif";
 
     List<string> memeList = new List<string>
@@ -33,7 +33,14 @@ public partial class MainPage : ContentPage
 
         int randomIndex = random.Next(memeList.Count);
         currentMeme = memeList[randomIndex];
-        MemImage.Source = currentMeme;
+
+        // Принудительный сброс источника
+        MemImage.Source = null;
+
+        // Явное указание загрузить файл как Asset
+        // Если файлы лежат в Resources/Images, простого имени обычно достаточно,
+        // если не заработает — попробуйте использовать путь: "Resources/Images/" + currentMeme
+        MemImage.Source = ImageSource.FromFile(currentMeme);
 
         if (!MemeStorage.SavedMemes.Contains(currentMeme))
         {
@@ -43,26 +50,18 @@ public partial class MainPage : ContentPage
 
     private void OnFavoriteClicked(object sender, EventArgs e)
     {
-        DisplayAlert("Уведомление", "Добавлено в избранное", "OK");
-    }
-
-    // Логика скачивания для Windows
-    private async void OnDownloadClicked(object sender, EventArgs e)
-    {
-        try
+        if (!MemeService.SavedMemes.Contains(currentMeme))
         {
-            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string targetPath = Path.Combine(docPath, currentMeme);
-
-            using var stream = await FileSystem.OpenAppPackageFileAsync(currentMeme);
-            using var fileStream = File.Create(targetPath);
-            await stream.CopyToAsync(fileStream);
-
-            await DisplayAlert("Успешно", $"Мем сохранен в папку Документы", "ОК");
+            MemeService.SavedMemes.Add(currentMeme);
+            DisplayAlert("Успешно", "Мем добавлен в избранное!", "OK");
         }
-        catch (Exception ex)
+        else
         {
-            await DisplayAlert("Ошибка", $"Не удалось сохранить: {ex.Message}", "ОК");
+            DisplayAlert("Уведомление", "Этот мем уже в избранном.", "OK");
         }
     }
+    private async void OnViewFavoritesClicked(object sender, EventArgs e)
+{
+    await Navigation.PushAsync(new SavedMemesPage());
+}
 }
