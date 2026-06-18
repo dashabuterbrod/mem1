@@ -34,30 +34,23 @@ public partial class MainPage : ContentPage
         int randomIndex = random.Next(memeList.Count);
         currentMeme = memeList[randomIndex];
         MemImage.Source = currentMeme;
+
     }
 
     private void OnFavoriteClicked(object sender, EventArgs e)
     {
-        DisplayAlert("Уведомление", "Добавлено в избранное", "OK");
-    }
-
-    // Логика скачивания для Windows
-    private async void OnDownloadClicked(object sender, EventArgs e)
-    {
-        try
+        if (!MemeService.SavedMemes.Contains(currentMeme))
         {
-            string docPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string targetPath = Path.Combine(docPath, currentMeme);
-
-            using var stream = await FileSystem.OpenAppPackageFileAsync(currentMeme);
-            using var fileStream = File.Create(targetPath);
-            await stream.CopyToAsync(fileStream);
-
-            await DisplayAlert("Успешно", $"Мем сохранен в папку Документы", "ОК");
+            MemeService.SavedMemes.Add(currentMeme);
+            DisplayAlert("Успешно", "Добавлено в избранное!", "OK");
         }
-        catch (Exception ex)
+        else
         {
-            await DisplayAlert("Ошибка", $"Не удалось сохранить: {ex.Message}", "ОК");
+            DisplayAlert("Уведомление", "Этот мем уже в избранном", "OK");
         }
     }
+    private async void OnViewFavoritesClicked(object sender, EventArgs e)
+{
+    await Navigation.PushAsync(new SavedMemesPage());
+}
 }
