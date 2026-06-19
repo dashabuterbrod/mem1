@@ -2,38 +2,58 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="mem1.MainPage"
-             BackgroundColor="LightGreen">
+             BackgroundColor="#F0F8FF">
     <ScrollView>
-        <VerticalStackLayout Padding="30" Spacing="25">
-            <Image x:Name="MemImage"
-                   Source="memea.gif"
-                   HeightRequest="250"
-                   WidthRequest="250"
-                   Aspect="AspectFit" />
+        <VerticalStackLayout Padding="20" Spacing="20">
 
-            <Label Text="Генерация мемов" 
-                   HorizontalOptions="Center" 
-                   FontSize="24"
-                   FontAttributes="Bold" />
+            <Label Text="Генератор Мемов" 
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#2C3E50" />
+
+            <Border StrokeShape="RoundRectangle 20"
+                    StrokeThickness="0"
+                    BackgroundColor="White"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Margin="10">
+                <Border.Shadow>
+                    <Shadow Brush="Gray" Offset="0,10" Radius="15" Opacity="0.3" />
+                </Border.Shadow>
+
+                <Image x:Name="MemImage"
+                       Source="memea.gif"
+                       HeightRequest="300"
+                       WidthRequest="300"
+                       Aspect="AspectFit" />
+            </Border>
 
             <Label x:Name="CountLabel" 
                    Text="Сгенерировано мемов: 0" 
                    HorizontalOptions="Center" 
-                   FontSize="18" />
+                   FontSize="18"
+                   TextColor="#7F8C8D" />
 
-            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
-                <Button Text="Генерировать" 
-            WidthRequest="130" 
-            Clicked="OnCounterClicked" />
+            <VerticalStackLayout Spacing="15">
+                <Button x:Name="CounterBtn" 
+                        Text="Генерировать мем" 
+                        FontSize="16"
+                        BackgroundColor="#3498DB"
+                        TextColor="White"
+                        CornerRadius="25"
+                        HeightRequest="50"
+                        Clicked="OnCounterClicked" />
 
-                <Button Text="♡" 
-            WidthRequest="50" 
-            Clicked="OnFavoriteClicked" />
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Button Text="В избранное" 
+                            BackgroundColor="gray"
+                            TextColor="White"
+                            CornerRadius="20"
+                            Clicked="OnFavoriteClicked" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
 
-                <Button Text="Коллекция" 
-            WidthRequest="130" 
-            Clicked="OnViewFavoritesClicked" />
-            </HorizontalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

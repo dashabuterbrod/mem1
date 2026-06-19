@@ -5,13 +5,13 @@
        x:Class="mem1.AppShell">
 
     <TabBar>
-        <Tab Title="Главная">
+        <Tab Title="Рандомайзер">
             <ShellContent
                 ContentTemplate="{DataTemplate local:MainPage}"
                 Route="MainPage" />
         </Tab>
 
-        <Tab Title="Коллекция">
+        <Tab Title="История">
             <ShellContent
                 ContentTemplate="{DataTemplate local:SavedMemesPage}"
                 Route="SavedMemesPage" />
@@ -27,6 +27,11 @@
             <ShellContent
                 ContentTemplate="{DataTemplate local:CreatedMemesPage}"
                 Route="CreatedMemesPage" />
+        </Tab>
+        <Tab Title="Избранное">
+            <ShellContent
+                ContentTemplate="{DataTemplate local:Favorites}"
+                Route="Favorites" />
         </Tab>
     </TabBar>
 

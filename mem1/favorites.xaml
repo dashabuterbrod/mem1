@@ -5,9 +5,8 @@
              Title="Избранное">
 
     <VerticalStackLayout Padding="20" Spacing="15">
-        <Button Text="← Назад" Clicked="OnBackClicked" HorizontalOptions="Start" />
 
-        <Label Text="Мои любимые мемы" 
+        <Label Text="Избранные мемы" 
                FontSize="22" 
                FontAttributes="Bold" 
                HorizontalOptions="Center" />

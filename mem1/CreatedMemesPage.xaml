@@ -36,7 +36,7 @@
                         </VerticalStackLayout>
                     </Grid>
 
-                    <Button Text="📋 Копировать мем в буфер" Clicked="OnCopyPopupMemeClicked" BackgroundColor="LightGreen" TextColor="Black" FontAttributes="Bold" />
+                    <Button Text="Копировать мем в буфер" Clicked="OnCopyPopupMemeClicked" BackgroundColor="LightGreen" TextColor="Black" FontAttributes="Bold" />
                     <Button Text="Закрыть" Clicked="OnClosePopupClicked" BackgroundColor="LightGray" TextColor="Black" />
                 </VerticalStackLayout>
             </Frame>

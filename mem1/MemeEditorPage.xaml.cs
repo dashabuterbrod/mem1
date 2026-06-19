@@ -42,6 +42,6 @@ public partial class MemeEditorPage : ContentPage
         CustomMemeStorage.CreatedMemes.Add(newMeme);
         MemeTextEntry.Text = string.Empty; // Очищаем поле после сохранения
 
-        await DisplayAlert("Успешно", "Мем с подписью сохранен в вашу галерею!", "ОК");
+        await DisplayAlert("Успешно", "Мем сохранен в созданные!", "ОК");
     }
 }
