@@ -1,5 +1,3 @@
-using System.Collections.ObjectModel;
-
 namespace mem1;
 
 public partial class Favorites : ContentPage
@@ -7,6 +5,7 @@ public partial class Favorites : ContentPage
     public Favorites()
     {
         InitializeComponent();
+        // Это обращение сработает ТОЛЬКО если x:Name в XAML совпадает с этим именем
         FavoritesCollectionView.ItemsSource = MemeService.SavedMemes;
     }
 

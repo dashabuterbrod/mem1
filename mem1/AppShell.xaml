@@ -18,6 +18,11 @@
                 ContentTemplate="{DataTemplate local:SavedMemesPage}"
                 Route="SavedMemesPage" />
         </Tab>
+        <Tab Title="Коллекция">
+            <ShellContent
+             ContentTemplate="{DataTemplate local:Favorites}"
+             Route="SavedMemesPage" />
+        </Tab>
     </TabBar>
 
 </Shell>
