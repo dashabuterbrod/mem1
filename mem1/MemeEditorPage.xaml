@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mem1.MemeEditorPage"
+             Title="Редактор">
+
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="20">
+
+            <Label Text="1. Выберите шаблон (Доступно больше вариантов)" FontAttributes="Bold" FontSize="16" />
+            <ScrollView Orientation="Horizontal" HeightRequest="100">
+                <HorizontalStackLayout Spacing="10" x:Name="TemplatesLayout">
+                    <ImageButton Source="one.gif" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="two.webp" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="three.gif" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="foy.webp" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="five.webp" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="six.gif" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="seven.webp" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="eight.gif" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="nine.webp" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                    <ImageButton Source="ten.webp" HeightRequest="90" WidthRequest="90" Aspect="AspectFill" Clicked="OnTemplateSelected"/>
+                </HorizontalStackLayout>
+            </ScrollView>
+
+            <Label Text="2. Настройка текста и эмодзи" FontAttributes="Bold" FontSize="16" />
+            <Entry x:Name="MemeTextEntry" Placeholder="Введите текст мема" TextChanged="OnTextChanged" />
+
+            <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+                <Button Text="😂" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="😎" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="😱" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="🤡" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="🔥" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="🤬" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="💩" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="😤" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="😓" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="💀" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+                <Button Text="🤑" FontSize="20" Clicked="OnEmojiClicked" BackgroundColor="Transparent" />
+            </HorizontalStackLayout>
+
+            <Line HorizontalOptions="Fill" Stroke="Gray" StrokeThickness="1" />
+
+            <Label Text="Предпросмотр:" HorizontalOptions="Center" FontAttributes="Italic" />
+            <Grid HeightRequest="250" HorizontalOptions="Center" WidthRequest="250">
+                <Image x:Name="PreviewImage" Source="one.gif" Aspect="AspectFit" />
+                <VerticalStackLayout VerticalOptions="End" BackgroundColor="#B0000000" Padding="8">
+                    <Label x:Name="PreviewLabel" Text="" TextColor="White" FontSize="16" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                </VerticalStackLayout>
+            </Grid>
+
+            <Button Text="💾 Сохранить в созданные" Clicked="OnSaveMemeClicked" BackgroundColor="LightBlue" TextColor="Black" FontAttributes="Bold" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

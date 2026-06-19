@@ -69,7 +69,13 @@
 	  <None Update="SavedMemesPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </None>
+	  <MauiXaml Update="CreatedMemesPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="favorites.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MemeEditorPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="SavedMemesPage.xaml">

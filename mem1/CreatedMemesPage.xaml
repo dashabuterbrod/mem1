@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mem1.CreatedMemesPage"
+             Title="Созданные мемы">
+
+    <Grid RowDefinitions="Auto, *">
+        <Label Grid.Row="0" Text="Ваша коллекция мемов" FontSize="20" FontAttributes="Bold" Margin="15" HorizontalOptions="Center" />
+
+        <CollectionView Grid.Row="1" x:Name="CreatedMemesCollectionView" ItemsLayout="VerticalGrid, 2" EmptyView="Вы еще не создали ни одного мема">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="5">
+                        <Frame BorderColor="LightGreen" CornerRadius="8" Padding="5" HasShadow="True">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnMemeTapped" CommandParameter="{Binding}" />
+                            </Frame.GestureRecognizers>
+
+                            <Grid RowDefinitions="*, Auto">
+                                <Image Grid.Row="0" Source="{Binding TemplatePath}" HeightRequest="130" Aspect="AspectFit" />
+                                <Label Grid.Row="1" Text="{Binding MemeText}" LineBreakMode="TailTruncation" HeightRequest="20" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="12" Margin="0,5,0,0"/>
+                            </Grid>
+                        </Frame>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ContentView Grid.RowSpan="2" x:Name="PopupViewer" BackgroundColor="#D0000000" IsVisible="False">
+            <Frame VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="300" Margin="20" Padding="15" BackgroundColor="White" CornerRadius="12">
+                <VerticalStackLayout Spacing="15">
+                    <Grid HeightRequest="250" WidthRequest="250" HorizontalOptions="Center">
+                        <Image x:Name="PopupImage" Aspect="AspectFit" />
+                        <VerticalStackLayout VerticalOptions="End" BackgroundColor="#B0000000" Padding="8">
+                            <Label x:Name="PopupLabel" TextColor="White" FontSize="16" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <Button Text="📋 Копировать мем в буфер" Clicked="OnCopyPopupMemeClicked" BackgroundColor="LightGreen" TextColor="Black" FontAttributes="Bold" />
+                    <Button Text="Закрыть" Clicked="OnClosePopupClicked" BackgroundColor="LightGray" TextColor="Black" />
+                </VerticalStackLayout>
+            </Frame>
+        </ContentView>
+    </Grid>
+</ContentPage>
